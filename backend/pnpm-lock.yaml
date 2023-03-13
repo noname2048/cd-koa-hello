@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  dotenv: ^16.0.3
   eslint: ^8.36.0
   eslint-config-prettier: ^8.7.0
   eslint-config-standard: ^17.0.0
@@ -13,6 +14,7 @@ specifiers:
   nodemon: ^2.0.21
 
 dependencies:
+  dotenv: 16.0.3
   koa: 2.14.1
   koa-router: 12.0.0
   nodemon: 2.0.21
@@ -410,19 +412,24 @@ packages:
     dev: true
 
   /doctrine/3.0.0:
-    resolution: {integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==}
-    engines: {node: '>=6.0.0'}
+    resolution: { integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w== }
+    engines: { node: '>=6.0.0' }
     dependencies:
       esutils: 2.0.3
     dev: true
 
+  /dotenv/16.0.3:
+    resolution: { integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ== }
+    engines: { node: '>=12' }
+    dev: false
+
   /ee-first/1.1.1:
-    resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
+    resolution: { integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow== }
     dev: false
 
   /encodeurl/1.0.2:
-    resolution: {integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==}
-    engines: {node: '>= 0.8'}
+    resolution: { integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w== }
+    engines: { node: '>= 0.8' }
     dev: false
 
   /es-abstract/1.21.1:

@@ -1,6 +1,9 @@
 import Koa from 'koa'
 import Router from 'koa-router'
 import api from './api/index.js'
+import dotenv from 'dotenv'
+
+dotenv.config({path: '.local.env'})
 
 const app = new Koa()
 const router = new Router()
