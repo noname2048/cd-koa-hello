@@ -1,9 +1,17 @@
+import Book from './../models/book.js'
+
 const listBook = (ctx) => {
   ctx.body = 'listed'
 }
 
 const createBook = (ctx) => {
   ctx.body = 'created'
+  const {
+    title, authors, publishedDate, price, tags
+  } = ctx.request.body;
+  const book = new Book({
+    title, authors, publishedDate, price, tags
+  })
 }
 
 const deleteBook = (ctx) => {

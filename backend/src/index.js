@@ -23,6 +23,7 @@ const app = new Koa()
 const router = new Router()
 const port = process.env.PORT || 4000
 
+// 바디파서는 라우터보다 상단에 있어야 함
 app.use(bodyParser())
 
 router.use('/api', api.routes())
