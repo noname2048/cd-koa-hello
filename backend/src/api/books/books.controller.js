@@ -1,9 +1,24 @@
+import Book from './../models/book.js'
+
 const listBook = (ctx) => {
   ctx.body = 'listed'
 }
 
-const createBook = (ctx) => {
+const createBook = async (ctx) => {
   ctx.body = 'created'
+  const {
+    title, authors, publishedDate, price, tags
+  } = ctx.request.body;
+  const book = new Book({
+    title, authors, publishedDate, price, tags
+  })
+
+  try {
+    await book.save();
+  } catch (e) {
+    return ctx.throw(500, e);
+  }
+
 }
 
 const deleteBook = (ctx) => {
