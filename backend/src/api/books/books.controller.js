@@ -12,6 +12,7 @@ const createBook = async (ctx) => {
   const book = new Book({
     title, authors, publishedDate, price, tags
   })
+<<<<<<< HEAD
 
   try {
     await book.save();
@@ -19,6 +20,8 @@ const createBook = async (ctx) => {
     return ctx.throw(500, e);
   }
 
+=======
+>>>>>>> 8902872b6c86febcc15e92d253532fdaf5a5bcb4
 }
 
 const deleteBook = (ctx) => {
