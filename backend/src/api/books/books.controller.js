@@ -1,6 +1,6 @@
 import * as Joi from 'joi'
 import mongoose from "mongoose"
-import Book from './../models/book.js'
+import {Book} from '../../models/book.js'
 
 
 const ObjectId = mongoose.Types.ObjectId

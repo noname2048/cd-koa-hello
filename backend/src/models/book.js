@@ -17,4 +17,4 @@ const Book = new Schema({
   }
 })
 
-export default {Author, Book}
+export {Author, Book}

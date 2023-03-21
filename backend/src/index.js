@@ -8,6 +8,7 @@ import bodyParser from 'koa-bodyparser'
 dotenv.config({path: '.env.local'})
 
 if (process.env.MONGO_URI === undefined) {
+  console.log(process.env.MONGO_URI)
   process.exit(0)
 }
 
