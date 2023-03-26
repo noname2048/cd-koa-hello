@@ -1,11 +1,11 @@
 import Koa from 'koa'
 import Router from 'koa-router'
 import api from './api/index.js'
-import dotenv from 'dotenv'
+import * as dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import bodyParser from 'koa-bodyparser'
 
-dotenv.config({path: '.env.local'})
+dotenv.config({path: './src/env/.env.local'})
 
 if (process.env.MONGO_URI === undefined) {
   console.log(process.env.MONGO_URI)
