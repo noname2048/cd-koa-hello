@@ -1,11 +1,11 @@
-import {Schema} from 'mongoose'
+import {Schema, model} from 'mongoose'
 
 const Author = new Schema({
   name: String,
   email: String
 })
 
-const Book = new Schema({
+const Book = model('Book', new Schema({
   title: String,
   authors: [Author],
   publishedDate: Date,
@@ -15,6 +15,6 @@ const Book = new Schema({
     type: Date,
     default: Date.now
   }
-})
+}))
 
 export {Author, Book}
