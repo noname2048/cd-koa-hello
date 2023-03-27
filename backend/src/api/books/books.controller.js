@@ -33,18 +33,20 @@ const getBook = async (ctx) => {
 }
 
 const createBook = async (ctx) => {
-  ctx.body = 'created'
   const {
-    title, authors, publishedDate, price, tags
+    title, authors, publishedDate, price, tags,
   } = ctx.request.body;
+
   const book = new Book({
     title, authors, publishedDate, price, tags
   })
+
   try {
-    await book.save();
+    await book.save()
   } catch (e) {
-    return ctx.throw(500, e);
+    return ctx.throw(500, e)
   }
+  ctx.body = book
 }
 
 const deleteBook = async (ctx) => {
