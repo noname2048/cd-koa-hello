@@ -65,7 +65,7 @@ const getBook = async (ctx) => {
 
 
 const deleteBook = async (ctx) => {
-  const {id} = ctx.params;
+  const {id} = ctx.params
 
   try {
     await Book.findByIdAndRemove(id).exec()
@@ -123,7 +123,23 @@ const replaceBook = async (ctx) => {
 
 
 const updateBook = async (ctx) => {
-  ctx.body = 'updated'
+  const {id} = ctx.params
+
+  if(!ObjectId.isValid(id)) {
+    ctx.status = 400
+    return
+  }
+  let book
+
+  try {
+    book = await Book.findByIdAndUpdate(id, ctx.request.body, {
+      new: true
+    })
+  } catch (e) {
+    return ctx.throw(500, e)
+  }
+
+  ctx.body = book
 }
 
 export {listBook, createBook, getBook, deleteBook, replaceBook, updateBook};
