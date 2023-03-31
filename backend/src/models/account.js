@@ -1,6 +1,11 @@
 import {Schema, model} from 'mongoose'
+import * as crypto from "crypto"
 
-const AccountSchema= new Schema({
+function hash(password) {
+  return crypto.createHmac('sha256', process.env.SECRET_KEY).update(password).digest('hex')
+}
+
+const AccountSchema = new Schema({
   profile: {
     username: String,
     thumbnail: {
@@ -24,5 +29,7 @@ const AccountSchema= new Schema({
   }
 })
 
-const Account = model('Accoun', AccountSchema)
+const Account = model('Account', AccountSchema)
+
+
 export default Account
