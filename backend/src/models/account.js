@@ -28,6 +28,36 @@ const AccountSchema = new Schema({
     createdAt: {type: Date, default: Date.now}
   }
 })
+AccountSchema.statics.findByUsername = function (username) {
+  return this.findOne({'profile.username': username}).exec()
+}
+
+AccountSchema.statics.findByEmail = function (email) {
+  return this.findOne({email}).exec()
+}
+
+AccountSchema.statics.findByEmailOrUsername = function ({username, email}) {
+  return this.findOne({
+    $or: [
+      {'profile.username': username},
+      {email}
+    ]
+  }).exec();
+}
+AccountSchema.statics.localRegister = function({username, email, password}) {
+  const account = new this({
+    profile: {
+      username
+    },
+    password: hash(password)
+  })
+  return account.save()
+}
+
+AccountSchema.methods.validatePassword = function (password) {
+  const hashed = hash(password)
+  return this.password === hashed
+}
 
 const Account = model('Account', AccountSchema)
 
