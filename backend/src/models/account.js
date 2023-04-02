@@ -44,7 +44,7 @@ AccountSchema.statics.findByEmailOrUsername = function ({username, email}) {
     ]
   }).exec();
 }
-AccountSchema.statics.localRegister = function({username, email, password}) {
+AccountSchema.statics.localRegister = function ({username, email, password}) {
   const account = new this({
     profile: {
       username
