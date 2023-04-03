@@ -5,4 +5,18 @@ const localRegister = async (ctx) => {
   ctx.body = 'register'
 }
 
-export {localRegister}
+const localLogin = async (ctx) => {
+  ctx.body = 'login'
+}
+
+const exists = async (ctx) => {
+  ctx.body = 'exists';
+};
+
+// 로그아웃
+const logout = async (ctx) => {
+  ctx.body = 'logout';
+};
+
+
+export {localRegister, localLogin, exists, logout}
